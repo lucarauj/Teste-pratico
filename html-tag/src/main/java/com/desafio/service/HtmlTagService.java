@@ -1,5 +1,6 @@
 package com.desafio.service;
 
+import com.desafio.exception.ErroAoProcessarUrlException;
 import com.desafio.exception.UrlJaProcessadaException;
 import com.desafio.model.HtmlTag;
 import com.desafio.repository.HtmlTagRepository;
@@ -10,6 +11,8 @@ import org.jsoup.select.Elements;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,9 +27,13 @@ public class HtmlTagService {
 
     public void processarURL(String url) {
 
-        List<HtmlTag> urlInDB = repository.findByUrl(url);
-
         try {
+            if (!isValidUrl(url)) {
+                throw new ErroAoProcessarUrlException("URL inválida: " + url);
+            }
+
+            List<HtmlTag> urlInDB = repository.findByUrl(url);
+
             if(urlInDB.isEmpty()) {
                 String html = downloadHtml(url);
                 contarHTMLTags(url, html);
@@ -34,8 +41,7 @@ public class HtmlTagService {
                 throw new UrlJaProcessadaException("Url já processada anteriormente!");
             }
         } catch (IOException e) {
-            System.err.println("Erro ao processar a URL: " + url);
-            e.printStackTrace();
+            throw new ErroAoProcessarUrlException("Erro ao processar a Url: " + url);
         }
     }
 
@@ -72,5 +78,14 @@ public class HtmlTagService {
 
     public List<HtmlTag> getAllTags() {
         return repository.findAll();
+    }
+
+    private boolean isValidUrl(String url) {
+        try {
+            new URL(url);
+            return true;
+        } catch (MalformedURLException e) {
+            return false;
+        }
     }
 }
