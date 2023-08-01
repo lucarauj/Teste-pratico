@@ -1,4 +1,4 @@
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/lucarauj/Teste-pratico/tree/main/LICENSE)
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/lucarauj/Teste-pratico/blob/main/LICENSE)
 
 # Teste prático - Desenvolvimento de sistema
 
