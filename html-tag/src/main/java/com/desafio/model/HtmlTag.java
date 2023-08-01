@@ -7,6 +7,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@Table(name = "html_tags")
 public class HtmlTag {
 
     @Id

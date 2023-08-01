@@ -51,6 +51,10 @@
 			<artifactId>jsoup</artifactId>
 			<version>1.14.3</version>
 		</dependency>
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
