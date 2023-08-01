@@ -1,5 +1,6 @@
 package com.desafio.service;
 
+import com.desafio.exception.UrlJaProcessadaException;
 import com.desafio.model.HtmlTag;
 import com.desafio.repository.HtmlTagRepository;
 import org.jsoup.Jsoup;
@@ -22,9 +23,16 @@ public class HtmlTagService {
     }
 
     public void processarURL(String url) {
+
+        List<HtmlTag> urlInDB = repository.findByUrl(url);
+
         try {
-            String html = downloadHtml(url);
-            contarHTMLTags(url, html);
+            if(urlInDB.isEmpty()) {
+                String html = downloadHtml(url);
+                contarHTMLTags(url, html);
+            } else {
+                throw new UrlJaProcessadaException("Url já processada anteriormente!");
+            }
         } catch (IOException e) {
             System.err.println("Erro ao processar a URL: " + url);
             e.printStackTrace();
