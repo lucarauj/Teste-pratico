@@ -82,7 +82,7 @@ CREATE TABLE html_tags (
 - https://www.example.com
 ```
 
-<p align="left"><img width="450px" src="https://github.com/lucarauj/Teste-pratico/blob/main/html-tag/src/main/resources/static/images/Tag2.png" /></p>
+<p align="left"><img width="600px" src="https://github.com/lucarauj/Teste-pratico/blob/main/html-tag/src/main/resources/static/images/Tag2.png" /></p>
 
 <br>
 
