@@ -73,13 +73,16 @@ CREATE TABLE html_tags (
 
 - Não permite cadastrar uma URL mais de uma vez;
 - Verifica se o endereço é uma URL válida;
-- Endereços salvos no banco para teste:
+
+<br>
+
+## Exemplo
 
 ```
 - https://www.example.com
-- https://novidades100.com.br/gadget/web/php/gerar_pagina
-- https://www.iana.org/help/example-domains
 ```
+
+<p align="left"><img width="450px" src="https://github.com/lucarauj/Teste-pratico/blob/main/html-tag/src/main/resources/static/images/Tag2.png" /></p>
 
 <br>
 
