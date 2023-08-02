@@ -45,6 +45,19 @@ classDiagram
 
 <br>
 
+## Script para criação tabela no banco de dados
+
+```sql
+CREATE TABLE html_tags (
+    id SERIAL PRIMARY KEY,
+    url VARCHAR(255) NOT NULL,
+    tag VARCHAR(50) NOT NULL,
+    contador INT NOT NULL
+);
+```
+
+- Obs.: foi utilizado o Flayway para criar a tabela no banco de dados ao inicializar a aplicação.
+
 ## Swagger
 
 - http://localhost:8080/swagger-ui/index.html#/
