@@ -25,7 +25,13 @@ public class HtmlTagController {
 
     @PostMapping
     public String processar(@RequestParam("url") String url, Model model) {
-        service.processarURL(url);
+        String errorMessage = service.processarURL(url);
+
+        if (errorMessage != null) {
+            model.addAttribute("errorMessage", errorMessage);
+            return "formulario";
+        }
+
         List<HtmlTag> tags = service.filtrarUrl(url);
         model.addAttribute("tags", tags);
         model.addAttribute("url", url);

@@ -3,25 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>HTML Tags</title>
+    <link rel="stylesheet" href="../static/css/estilos.css" th:href="@{/css/estilos.css}">
 </head>
 <body>
 <h1>Lista de Tags HTML</h1>
-<br>
+<a href="/html-tag/formulario" class="button">Nova consulta</a>
+</br>
+</br>
 <table>
     <thead>
     <tr>
-        <th>URL</th>
-        <th>Tag</th>
-        <th>Quantidade</th>
+        <th style="border: 1px solid white;">URL</th>
+        <th style="border: 1px solid white;">Tag</th>
+        <th style="border: 1px solid white;">Quantidade</th>
     </tr>
     </thead>
     <tbody>
-        <tr th:each="tag : ${tags}">
-            <td th:text="${tag.url}"></td>
-            <td th:text="${tag.tag}"></td>
-            <td th:text="${tag.contador}"></td>
-        </tr>
+    <tr th:each="tag, status : ${tags}">
+        <td th:if="${status.index == 0}" th:text="${tag.url}" style="border: 1px solid white;" th:rowspan="${#lists.size(tags)}"></td>
+        <td th:text="${tag.tag}" style="border: 1px solid white;"></td>
+        <td th:text="${tag.contador}" style="border: 1px solid white;"></td>
+    </tr>
     </tbody>
 </table>
+</br>
+</br>
 </body>
 </html>

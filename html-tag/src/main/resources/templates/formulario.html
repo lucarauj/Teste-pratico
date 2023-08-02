@@ -3,15 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>HTML Tags</title>
+    <link rel="stylesheet" href="../static/css/estilos.css" th:href="@{/css/estilos.css}">
 </head>
 <body>
 <h1>Listar Tags de Página HTML</h1>
-<br>
+<br><br><br>
 <form method="post" action="/html-tag">
-    <label for="url"> URL:</label>
-    <input id="url" name="url">
+    <div>
+        <label for="url"> Informe uma URL</label>
+        <input id="url" name="url">
+    </div>
+
     <br>
     <input type="submit" value="Consultar">
+    <br>
+    <br>
+    <div th:if="${errorMessage}" style="color: red;">
+        <span th:text="${errorMessage}"></span>
+    </div>
 </form>
 </body>
 </html>

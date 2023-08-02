@@ -1,6 +1,5 @@
 package com.desafio.service;
 
-import com.desafio.exception.ErroAoProcessarUrlException;
 import com.desafio.model.HtmlTag;
 import com.desafio.repository.HtmlTagRepository;
 import org.jsoup.Jsoup;
@@ -24,24 +23,24 @@ public class HtmlTagService {
         this.repository = repository;
     }
 
-    public void processarURL(String url) {
-
+    public String processarURL(String url) {
         try {
             if (!isValidUrl(url)) {
-                throw new ErroAoProcessarUrlException("URL inválida: " + url);
+                return "URL inválida!";
             }
 
             List<HtmlTag> urlInDB = repository.findByUrl(url);
 
-            if(urlInDB.isEmpty()) {
+            if (urlInDB.isEmpty()) {
                 String html = downloadHtml(url);
                 contarHTMLTags(url, html);
             } else {
-                return;
+                return null;
             }
         } catch (IOException e) {
-            throw new ErroAoProcessarUrlException("Erro ao processar a Url: " + url);
+            return "Erro ao processar a Url: " + url;
         }
+        return null;
     }
 
     public List<HtmlTag> filtrarUrl(String url) {
