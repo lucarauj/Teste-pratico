@@ -68,7 +68,7 @@ classDiagram
 
 # Link da aplicação:
 
-[![CONSULTAR TAGS]](https://teste-pratico-production.up.railway.app/html-tag/formulario)
+[[CONSULTAR TAGS]](https://teste-pratico-production.up.railway.app/html-tag/formulario)
 
 
 ## 👨‍🎓 Autor
