@@ -1,6 +1,12 @@
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/lucarauj/Teste-pratico/blob/main/LICENSE)
 
-# Teste prático - Desenvolvimento de sistema
+# Teste prático - Desenvolvimento de sistema:
+
+<br>
+ 
+## Contador de Tags HTML
+
+<br>
 
 ## Problema
 
@@ -45,7 +51,7 @@ classDiagram
 
 <br>
 
-## Script para criação tabela no banco de dados
+## Script para criar tabela no banco de dados
 
 ```sql
 CREATE TABLE html_tags (
@@ -57,6 +63,8 @@ CREATE TABLE html_tags (
 ```
 
 - Obs.: foi utilizado o Flayway para criar a tabela no banco de dados ao inicializar a aplicação.
+
+<br>
 
 ## Swagger
 
@@ -82,6 +90,8 @@ CREATE TABLE html_tags (
 # Link da aplicação:
 
 [[CONSULTAR TAGS]](https://teste-pratico-production.up.railway.app/html-tag/formulario)
+
+<br>
 
 
 ## 👨‍🎓 Autor
