@@ -6,7 +6,7 @@
 
 - No código de uma página HTML há diversas tags para apresentar o conteúdo da melhor forma. 
 - Para uma análise mais cautelosa, há o interesse de contabilizar a quantidade de cada tag HTML em uma determinada página.
-- É necessário criar um programa para identificar as tags HTML existentes nas páginas que forem carregadas por meio de uma lista de URL informada. 
+- É necessário criar um programa para identificar as tags HTML existentes nas páginas que forem carregadas por meio da URL informada. 
 - Deve ser contado quantas vezes cada tag aparece em cada página.
 - É necessário mostrar as informações coletadas para possibilitar verificar os dados da URL informada. 
 - Assim, as URL, tags e as respectivas contagens devem ser armazenadas em um banco de dados.
@@ -54,7 +54,12 @@ classDiagram
 ## Validações
 
 - Não permite cadastrar uma URL mais de uma vez;
-- Verifica se o endereço é uma URL válida;
+- Verifica se o endereço é uma URL válida. Exemplo:
+
+```
+- https://www.example.com
+- https://novidades100.com.br/gadget/web/php/gerar_pagina
+```
 
 <br>
 
