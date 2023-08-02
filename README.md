@@ -27,6 +27,7 @@
 - Thymeleaf
 - Postman
 - Swagger
+- Railway
 
 <br>
 
@@ -64,6 +65,10 @@ classDiagram
 ```
 
 <br>
+
+# Link da aplicação:
+
+[!Consultar Tags](https://teste-pratico-production.up.railway.app/html-tag/formulario)
 
 
 ## 👨‍🎓 Autor
