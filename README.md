@@ -19,10 +19,14 @@
 - Maven
 - Spring Boot
 - PostgreSQL
+- Git
+- GitHub
 - Flyway
 - Lombok
 - Jsoup
 - Thymeleaf
+- Postman
+- Swagger
 
 <br>
 
@@ -39,6 +43,21 @@ classDiagram
 ```
 
 <br>
+
+## Swagger
+
+- http://localhost:8080/swagger-ui/index.html#/
+- http://localhost:8080/v3/api-docs
+
+<br>
+
+## Validações
+
+- Não permite cadastrar uma URL mais de uma vez;
+- Verifica se o endereço é uma URL válida;
+
+<br>
+
 
 ## 👨‍🎓 Autor
 

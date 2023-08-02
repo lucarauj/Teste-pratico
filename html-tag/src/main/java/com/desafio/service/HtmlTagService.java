@@ -1,7 +1,6 @@
 package com.desafio.service;
 
 import com.desafio.exception.ErroAoProcessarUrlException;
-import com.desafio.exception.UrlJaProcessadaException;
 import com.desafio.model.HtmlTag;
 import com.desafio.repository.HtmlTagRepository;
 import org.jsoup.Jsoup;
@@ -38,11 +37,15 @@ public class HtmlTagService {
                 String html = downloadHtml(url);
                 contarHTMLTags(url, html);
             } else {
-                throw new UrlJaProcessadaException("Url já processada anteriormente!");
+                return;
             }
         } catch (IOException e) {
             throw new ErroAoProcessarUrlException("Erro ao processar a Url: " + url);
         }
+    }
+
+    public List<HtmlTag> filtrarUrl(String url) {
+        return repository.findByUrl(url);
     }
 
     private String downloadHtml(String url) throws IOException {

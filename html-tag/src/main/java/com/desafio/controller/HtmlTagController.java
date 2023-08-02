@@ -2,12 +2,13 @@ package com.desafio.controller;
 
 import com.desafio.model.HtmlTag;
 import com.desafio.service.HtmlTagService;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/html-tag")
 public class HtmlTagController {
 
@@ -17,17 +18,17 @@ public class HtmlTagController {
         this.service = service;
     }
 
-    @GetMapping("/")
-    public String index(Model model) {
-        List<HtmlTag> tags = service.getAllTags();
-        model.addAttribute("tags", tags);
-
-        return "index";
+    @GetMapping("/formulario")
+    public String carregaFormulario(Model model) {
+        return "formulario";
     }
 
-    @PostMapping("/processar")
-    public String processar(@RequestParam("url") String url) {
+    @PostMapping
+    public String processar(@RequestParam("url") String url, Model model) {
         service.processarURL(url);
-        return "redirect:/";
+        List<HtmlTag> tags = service.filtrarUrl(url);
+        model.addAttribute("tags", tags);
+        model.addAttribute("url", url);
+        return "listagem";
     }
 }

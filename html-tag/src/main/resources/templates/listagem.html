@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Tags</title>
+</head>
+<body>
+<h1>Lista de Tags HTML</h1>
+<br>
+<table>
+    <thead>
+    <tr>
+        <th>URL</th>
+        <th>Tag</th>
+        <th>Quantidade</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr th:each="tag : ${tags}">
+            <td th:text="${tag.url}"></td>
+            <td th:text="${tag.tag}"></td>
+            <td th:text="${tag.contador}"></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

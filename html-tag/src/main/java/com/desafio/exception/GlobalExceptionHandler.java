@@ -8,11 +8,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(UrlJaProcessadaException.class)
-    public ResponseEntity<String> handleUrlJaProcessadaException(UrlJaProcessadaException ex) {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
-    }
-
     @ExceptionHandler(ErroAoProcessarUrlException.class)
     public ResponseEntity<String> handleErroAoProcessarUrlException(ErroAoProcessarUrlException ex) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
