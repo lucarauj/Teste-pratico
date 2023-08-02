@@ -1,10 +1,6 @@
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/lucarauj/Teste-pratico/blob/main/LICENSE)
 
-# Teste prático - Desenvolvimento de sistema:
-
-<br>
- 
-## Contador de Tags HTML
+# Teste prático - Contador de Tags HTML
 
 <br>
 
@@ -68,8 +64,8 @@ CREATE TABLE html_tags (
 
 ## Swagger
 
-- http://localhost:8080/swagger-ui/index.html#/
-- http://localhost:8080/v3/api-docs
+- https://teste-pratico-production.up.railway.app/swagger-ui/index.html#/
+- https://teste-pratico-production.up.railway.app/v3/api-docs
 
 <br>
 
